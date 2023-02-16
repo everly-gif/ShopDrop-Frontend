@@ -1,0 +1,25 @@
+<div class="form-cont">
+
+<form #loginForm = "ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <h1>Login</h1><br>
+    <div class="mb-4">
+            <input class="form-control" id="email" #email="ngModel" type="email" placeholder="Enter email" name="email"  maxlength="30" required ngModel>
+            <div *ngIf="email.touched && email.invalid" style="color:red;">
+                <div *ngIf="email?.errors?.['required']" style="color:red;">
+                Email is required</div>
+             </div>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" id="password" #password="ngModel" type="password" 
+        placeholder="Enter Password" name="password" max="40" min="6" required ngModel>
+        <div *ngIf="password.touched && password.invalid" style="color:red;">
+            <div *ngIf="password?.errors?.['required']" style="color:red;">
+            Password is required</div>
+           
+   </div></div>
+  <br>
+    <button class="btn btn-outline-success" type="submit">Login</button>
+    <br><br><p class="text-primary">{{status}}</p>
+    <p class="text-center">New Here?  <a routerLink="/signup">Create an Account</a></p>
+    </form><br>
+</div>

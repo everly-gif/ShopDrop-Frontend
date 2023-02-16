@@ -1,0 +1,43 @@
+<div class="form-cont">
+
+    <form #signupForm = "ngForm" (ngSubmit) = "onSubmit(signupForm)">
+        <h1>Sign Up</h1><br>
+        <div class="mb-4">
+            <input class="form-control" id="name" #name="ngModel" type="text" placeholder="Enter Name" name="name"  maxlength="30" required ngModel>
+            <div *ngIf="name.touched && name.invalid" style="color:red;">
+                <div *ngIf="name?.errors?.['required']" style="color:red;">
+                Name is required</div>
+             </div>
+       </div>
+        <div class="mb-4">
+                <input class="form-control" id="email" #email="ngModel" type="email" placeholder="Enter email" name="email"  maxlength="30" required ngModel>
+                <div *ngIf="email.touched && email.invalid" style="color:red;">
+                    <div *ngIf="email?.errors?.['required']" style="color:red;">
+                    Email is required</div>
+                 </div>
+        </div>
+        <div class="mb-4">
+            <input class="form-control" id="password" #password="ngModel" type="password" 
+            placeholder="Enter Password" name="rating" max="40" min="6" required ngModel>
+            <div *ngIf="password.touched && password.invalid" style="color:red;">
+                <div *ngIf="password?.errors?.['required']" style="color:red;">
+                Password is required</div>
+               
+       </div></div>
+       <div class="mb-4">
+        <input class="form-control" id="contact" #contact="ngModel" type="tel" 
+        placeholder="Enter Contact" name="contact" min="10" required ngModel>
+        <div *ngIf="contact.touched && contact.invalid" style="color:red;">
+            <div *ngIf="contact?.errors?.['required']" style="color:red;">
+            Contact is required</div>
+           
+   </div>
+    
+    </div>
+      <br>
+        <button class="btn btn-outline-success" type="submit">Register</button>
+        <br><br><p class="text-primary">{{status}}</p>
+        <p class="text-center">Existing User?  <a routerLink="/login">Login</a></p>
+        </form><br>
+    </div>
+    

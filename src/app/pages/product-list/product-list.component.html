@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="product-cont">
+ <div class="card" style="width: 22rem;" *ngFor="let product of products">
+ <a routerLink="/products/{{product.id}}"><img src="{{product.image}}" class="card-img-top" alt="image"></a>
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <h5 class="card-text">₹ {{product.price}}</h5>
+    <div class="button-cont">
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+    <a href="#" class="btn btn-secondary">Buy Now</a>
+   </div>
+  </div>
+</div>
+</div>
