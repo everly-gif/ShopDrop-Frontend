@@ -14,6 +14,15 @@ constructor (private user : UserService){}
 onSubmit(loginForm : any){
  this.user.login(loginForm.value).subscribe((response:any)=>{
   this.status = response.message;
+  console.log(localStorage.getItem('user_id'));
+  console.log(response);
+  if(response.success===true){
+    localStorage.setItem('user_id', response.user.id);
+    localStorage.setItem('username', response.user.name);
+    localStorage.setItem('useremail', response.user.email);
+    localStorage.setItem('user_contact', response.user.contact);
+  }
+  loginForm.reset();
  });
 }
 

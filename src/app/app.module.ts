@@ -14,6 +14,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { CartComponent } from './pages/cart/cart.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     LoginFormComponent,
     SignupFormComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
