@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order Id</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Product & Quantity</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr  *ngFor="let order of orders let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{order.id}}</td>
+                <td>{{order.amount}}</td>
+                <td >
+                    <div *ngFor="let od of order.order_details" style=" width:40%;">
+                        <p>Quantity : {{od.quantity}}</p>
+                        <a href="/products/{{od.product_id}}">View Product</a>
+                    </div>
+                </td>
+               </tr> 
+      
+        </tbody>
+      </table>
+</div>

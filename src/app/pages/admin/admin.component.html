@@ -1,0 +1,56 @@
+
+
+<section class="products">
+    <a routerLink="/logout" class="text-right mt-2 mb-2">Logout</a>
+    <h1>Admin Page</h1>
+    
+    <div class="product-list">
+    <div *ngFor="let item of products; let i=index" class="product">
+    
+            <div class="product-img">
+                <img height="300" width="300" src="{{item.image}}" alt="">
+            </div>
+    
+            <div class="product-details">
+                <h3>{{item.category.name}}</h3>
+                <h4>{{item.name}}</h4>
+                <h5>Rs.{{item.price}}</h5>
+            </div>
+       <form #updateform="ngForm" (ngSubmit)="update(item.id,updateform.value,updateform)">
+        <input type="text" name="name" placeholder="product name" ngModel /><br>
+        <input type="text" name="image" placeholder="image link" ngModel /><br>
+        <input type="text" name="price" placeholder="price" ngModel /><br>
+        <input type="submit" class="btn btn-dark mt-3"  value="update" />
+    </form>
+    </div>
+    </div>
+    
+    </section>
+    
+    
+    
+    
+    <section class="update">
+    
+        <div class="head-add">
+            <h1>Add a New Product</h1>  
+        </div>
+    <form #addform="ngForm" (ngSubmit)="addproduct(addform.value, addform)" class="addform">
+        <input class="add" type="text" name="name" placeholder="product name" ngModel /><br>
+        <input class="add" type="text" name="price" placeholder="price" ngModel /><br>
+        <input class="add" type="text" name="image" placeholder="product image link" ngModel /><br>
+        <!-- <input type="text" name="cid" placeholder="price" ngModel /><br> -->
+        <select class="add-drop"  name="cid" ngModel>
+            <option style="color:#7c7a7f;" value="" disabled selected hidden >Category</option>
+            <option  value="1">Clothing</option>
+            <option value="2">Accessories</option>
+            <!-- <option value="3">lunchItems</option>
+            <option value="4">drinkItems</option> -->
+        </select>
+        <br>
+        <input class="add" type="text" name="description" placeholder="description" ngModel /><br>
+        <input type="submit" class="btn btn-dark mt-3" name="" value="Add" />
+    </form>
+    </section>
+    
+    

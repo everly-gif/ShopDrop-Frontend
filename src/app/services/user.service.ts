@@ -7,12 +7,26 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   constructor(private http : HttpClient) { }
+
+  token : any = localStorage.getItem('token');
   
   public register(data : any){
-   return this.http.post('http://localhost:8000/api/users',data);
+    let headers={"Content-Type":"application/json","Accept":"application/json","Authorization": `Bearer ${this.token}`};
+   return this.http.post('http://localhost:8000/api/users',data,{headers});
   }
   
   public login(data:any){
-    return this.http.post('http://localhost:8000/api/users/login',data);
+    let headers={"Content-Type":"application/json","Accept":"application/json","Authorization": `Bearer ${this.token}`};
+    return this.http.post('http://localhost:8000/api/users/login',data,{headers});
   }
+
+  public adminRegister(data : any){
+    let headers={"Content-Type":"application/json","Accept":"application/json","Authorization": `Bearer ${this.token}`};
+    return this.http.post('http://localhost:8000/api/admins/register',data,{headers});
+   }
+   
+   public adminLogin(data:any){
+    let headers={"Content-Type":"application/json","Accept":"application/json","Authorization": `Bearer ${this.token}`};
+     return this.http.post('http://localhost:8000/api/admins/login',data, {headers});
+   }
 }

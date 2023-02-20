@@ -1,0 +1,28 @@
+
+<div class="form-cont">
+
+    <form #signupForm = "ngForm" (ngSubmit) = "onSubmit(signupForm)">
+        <h1>Sign Up</h1><br>
+        <div class="mb-4">
+            <input class="form-control" id="username" #username="ngModel" type="text" placeholder="Enter Name" name="username"  maxlength="30" required ngModel>
+            <div *ngIf="username.touched && username.invalid" style="color:red;">
+                <div *ngIf="username?.errors?.['required']" style="color:red;">
+                Name is required</div>
+             </div>
+       </div>
+    
+        <div class="mb-4">
+            <input class="form-control" id="password" #password="ngModel" type="password" 
+            placeholder="Enter Password" name="rating" max="40" min="6" required ngModel>
+            <div *ngIf="password.touched && password.invalid" style="color:red;">
+                <div *ngIf="password?.errors?.['required']" style="color:red;">
+                Password is required</div>
+               
+       </div></div>
+      <br>
+        <button class="btn btn-outline-success" type="submit">Register</button>
+        <br><br><p class="text-primary">{{status}}</p>
+        <p class="text-center">Existing User?  <a routerLink="/admin">Login</a></p>
+        </form><br>
+    </div>
+    

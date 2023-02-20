@@ -1,6 +1,6 @@
 import { compileDeclareFactoryFunction } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { window } from 'rxjs';
+import { VirtualTimeScheduler, window } from 'rxjs';
 import { PaymentService } from 'src/app/services/payment.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -22,13 +22,13 @@ export class CartComponent implements OnInit {
   constructor(private product : ProductService, private payment : PaymentService){}
 
   ngOnInit() {
-    
+
     this.product.getCart(this.user_id).subscribe((response:any)=>{
       this.cart = response;
       for(let i = 0; i < this.cart.length; i++){
         this.total+= Number(this.cart[i].pivot.amount);
       }
-      console.log(response)
+      console.log(response);
     })
 
       
@@ -75,7 +75,7 @@ export class CartComponent implements OnInit {
     total : total
   })
   let  options :any = {
-    "key": "", // Enter the Key ID generated from the Dashboard
+    "key": "rzp_test_TqxwRj5kY75knS", // Enter the Key ID generated from the Dashboard
     "amount": '', // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
     "name": "ShopDrop",
@@ -143,13 +143,13 @@ function insertIntoCart(cart: any, order_id: any) {
 
 function clearCart(user_id:any){
   $.ajax({
-    url:`ttp://localhost:8000/api/clear-cart/${user_id}`,
+    url:`http://localhost:8000/api/clear-cart/${user_id}`,
     cache: false,
     type: "DELETE",
     data: {},
    success: function(response) { 
       console.log('success');
-      //window.location.href='';
+      location.pathname = '';
   }
 
 });

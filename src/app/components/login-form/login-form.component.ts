@@ -20,9 +20,12 @@ onSubmit(loginForm : any){
     localStorage.setItem('user_id', response.user.id);
     localStorage.setItem('username', response.user.name);
     localStorage.setItem('useremail', response.user.email);
+    localStorage.setItem('token', response.token);
     localStorage.setItem('user_contact', response.user.contact);
+    localStorage.setItem('role', 'user');
   }
   loginForm.reset();
+  location.href='/';
  });
 }
 

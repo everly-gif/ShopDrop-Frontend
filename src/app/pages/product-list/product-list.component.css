@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
+    background-color: #ccc;;
 }
 .card img{
     width:100%;
@@ -17,4 +18,19 @@
 .button-cont{
     display: flex;
     justify-content: space-between;
+}
+.main-container{
+    background-color: #ccc;
+    min-height: 100vh;
+}
+
+.add{
+    
+    background:linear-gradient(rgb(33, 14, 51), rgb(124, 55, 164)) !important;
+    color: rgb(248, 247, 250);
+}
+
+.added{
+    background:linear-gradient(rgb(197, 150, 244), rgb(227, 196, 245));
+    color: rgb(79, 48, 125);
 }

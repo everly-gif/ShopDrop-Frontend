@@ -1,0 +1,40 @@
+.form-control me-2{
+    color:#c98af3;
+
+}
+
+.btn {
+    color:#c98af3;
+    
+}
+
+.btn-4 {
+    border-radius: 50px;
+    border: 3px solid #fff;
+    background-color: black;
+    color: #c98af3;
+    /* overflow: hidden*/
+}
+
+
+
+.header_sec{
+  background-color: #e0d4fc;
+ 
+}
+
+
+
+.navbar{
+  background-color: #e0d4fc;
+ 
+}
+.nav-link{
+    color:#060606;
+}
+
+.navbar-brand{
+    background-color: black;
+    color:#fcf9fe;
+    /* border-radius:15%; */
+}

@@ -14,12 +14,22 @@ export class ProductListComponent implements OnInit{
   constructor (private product : ProductService){}
 
   ngOnInit() {
-      
+  
+  if(this.user_id!==null){
     this.product.getProducts(this.user_id).subscribe((response:any)=>{
       this.products = response.products;
       this.cart = response.cart;
      
     })
+  }
+  else{
+    this.product.getAllProducts().subscribe((response:any)=>{
+      this.products = response;
+      
+    })
+  }
+  
+ 
   
   }
 

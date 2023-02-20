@@ -1,4 +1,4 @@
-
+/* 
 .form-cont{
     display: flex;
     justify-content: center;
@@ -23,4 +23,60 @@ form div{
 }
 form button{
     width:100%;
+} */
+
+.form-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    height:100vh;
+    /* background: linear-gradient(#141e30, #243b55); */
+    background: linear-gradient(rgb(249, 247, 251), rgb(241, 229, 248));
+
+}
+
+form{
+    width : 30%;
+    background-color: rgb(28, 19, 53);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+h1{
+    color: rgb(248, 247, 250);
+}
+p{
+    color:rgb(252, 249, 245);
+}
+
+
+p .text-primary{
+    color:rgb(252, 248, 243);
+}
+
+a{
+    color:rgb(252, 247, 240);
+}
+
+form div{
+    margin-bottom: 25px;
+
+}
+form button{
+    width:100%;
+}
+
+button{
+    background:linear-gradient(rgb(204, 162, 246), rgb(235, 216, 246));
+    color: rgb(79, 48, 125);
+}
+
+button:hover
+{
+    
+    background:linear-gradient(rgb(33, 14, 51), rgb(124, 55, 164));
+    color: rgb(248, 247, 250);
 }

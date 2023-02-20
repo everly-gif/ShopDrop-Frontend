@@ -15,6 +15,9 @@ export class SignupFormComponent {
    
     this.user.register(signupForm.value).subscribe((response:any)=>{
        this.status = response.message;
+       if(response.success===true){
+        location.href='/';
+       }
     });
     signupForm.reset();
   }

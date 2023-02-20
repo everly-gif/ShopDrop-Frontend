@@ -1,5 +1,7 @@
 <app-header></app-header>
-<table class="table">
+<div class="main-container pt-5">
+<div class="container">
+<table class="table w-80">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -14,15 +16,22 @@
         <th scope="row">{{i+1}}</th>
         <td><img src="{{item.image}}" width="150px" height="150px"></td>
         <td>{{item.name}}</td>
-        <td>
-            <button (click) = "updateCart(i,'plus')">+</button>
+        <!-- <td>
+            <button class="qtn-btn bg-primary" (click) = "updateCart(i,'plus')">+</button>
              {{item.pivot.quantity}}
-            <button  (click) = "updateCart(i,'minus')">-</button>
-        </td>
+            <button class="qtn-btn bg-primary" (click) = "updateCart(i,'minus')">-</button>
+        </td> -->
+        <td class="action">
+          <button class="qtbtn"><i class="fa-solid fa-minus" (click)="updateCart(i,'minus')"></i></button>
+          {{item.pivot.quantity}}
+          <button class="qtbtn"><i class="fa-solid fa-plus" (click)="updateCart(i,'plus')"></i></button>
+      </td>
         <td>₹ {{item.pivot.amount}} </td>
       </tr>
   
     </tbody>
   </table>
-  <p class="text-center">Total : ₹ {{total}}</p>
-  <button class="btn btn-danger w-100" (click)="pay(cart,total)">Checkout </button>
+  <h3 class="text-center">Total : ₹ {{total}}</h3>
+  <button class="btn btn-outline-dark checkout" (click)="pay(cart,total)">Checkout </button>
+</div>
+</div>

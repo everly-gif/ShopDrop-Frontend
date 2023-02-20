@@ -18,7 +18,7 @@
         </div>
         <div class="mb-4">
             <input class="form-control" id="password" #password="ngModel" type="password" 
-            placeholder="Enter Password" name="rating" max="40" min="6" required ngModel>
+            placeholder="Enter Password" name="password" max="40" min="6" required ngModel>
             <div *ngIf="password.touched && password.invalid" style="color:red;">
                 <div *ngIf="password?.errors?.['required']" style="color:red;">
                 Password is required</div>
@@ -35,7 +35,7 @@
     
     </div>
       <br>
-        <button class="btn btn-outline-success" type="submit">Register</button>
+        <button class="btn btn-outline-dark" type="submit">Register</button>
         <br><br><p class="text-primary">{{status}}</p>
         <p class="text-center">Existing User?  <a routerLink="/login">Login</a></p>
         </form><br>

@@ -9,13 +9,19 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { CartComponent } from './pages/cart/cart.component';
 import * as $ from 'jquery';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminRegisterComponent } from './pages/admin-register/admin-register.component';
+import { AdminProductsComponent } from './pages/admin-products/admin-products.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +35,20 @@ import * as $ from 'jquery';
     SignupFormComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    OrdersComponent,
+    AdminComponent,
+    AdminRegisterComponent,
+    AdminProductsComponent,
+    AdminLoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

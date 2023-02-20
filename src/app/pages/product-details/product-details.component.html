@@ -1,17 +1,17 @@
 <app-header></app-header>
 
 <div class="cont">
-<div class="main-container">
+<div class="main-container" *ngFor="let item of products">
 <div class="image-cont">
-    <img src="{{products.image}}">
+    <img src="{{item.image}}">
 </div>
 <div class="details-cont">
-    <h1>{{products.name}}</h1>
-    <h3>₹ {{products.price}}</h3>
-    <p>{{products.description}}</p>
+    <h1>{{item.name}}</h1>
+    <h3>₹ {{item.price}}</h3>
+    <p>{{item.description}}</p>
     <div class="button-cont">
-        <a href="#" class="btn btn-primary me-3">Add to Cart</a>
-        <a href="#" class="btn btn-secondary">Buy Now</a>
+    <button  class="btn btn-primary w-100 add" *ngIf="checkInCart(item)=== false" (click)="addTocart(item)" >Add To Cart</button>
+    <button  class="btn btn-primary w-100 added" *ngIf="checkInCart(item)=== true">Added To Cart</button>
     </div>
 </div>
 </div>
